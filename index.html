@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Information</title>
+</head>
+<body>
+
+    <h1>API Details</h1>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Authentication</td>
+            <td>
+                <select id="auth-select">
+                    <option value="none">No Authentication</option>
+                    <option value="api-key">API Key</option>
+                    <option value="oauth">OAuth</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>HTTPS Support</td>
+            <td>
+                <select id="https-select">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>CORS</td>
+            <td>
+                <select id="cors-select">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    <button onclick="submitInfo()">Submit</button>
+
+    <script>
+        function submitInfo() {
+            const auth = document.getElementById('auth-select').value;
+            const https = document.getElementById('https-select').value;
+            const cors = document.getElementById('cors-select').value;
+
+            alert(`Authentication: ${auth}\nHTTPS Support: ${https}\nCORS: ${cors}`);
+        }
+    </script>
+
+</body>
+</html>
